@@ -1,0 +1,54 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.container{
+	margin: auto;
+	display: grid;
+	place-items: center;
+	height: 100vh;
+	background: hsl(260, 20%, 10%);
+}
+.stik-transparent{
+	position: relative;
+	display: grid;
+	justify-content: center;
+	padding-top: .5rem;	
+	width: clamp(2rem, 4rem, 3rem);
+	height: clamp(6rem, 10rem, 10rem);
+	background: hsl(250, 100%, 100% / 0);
+	animation: rotasi 3s infinite;
+}
+
+@keyframes rotasi{
+	0%{
+		transform: rotate(0deg);
+	}
+	100%{
+		transform: rotate(-360deg);
+	}
+}
+
+.ball{
+	position: relative;
+	width: 2.5rem;
+	height: 2.5rem;
+	border-radius: 50%;
+	background: #fff;
+	background: rgb(0,0,1);
+	background: radial-gradient(circle, rgba(0,0,1,1) 0%, rgba(223,0,0,1) 15%, rgba(255,149,0,1) 64%);	
+}
+
+.ball:before{
+	content:'';
+	position: absolute;
+	border-radius: 1rem 1.1rem 1.1rem 1rem;
+	width: 5rem;
+	height: 2.5rem;
+	background: linear-gradient(to right, hsl(0, 100%, 50%) 70%, hsl(60, 100%, 50%));
+	filter: blur(1rem);
+	z-index: -1;
+
+}
